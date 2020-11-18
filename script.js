@@ -5,7 +5,6 @@ var gridOptions = {
         { headerName: "Name", field: "name" },
         { headerName: "full_name", field: "full_name" },
         { headerName: "private", field: "private" },
-        //{ headerName: "owner", field: "owner",  },
 
     ],
     defaultColDef: {
@@ -47,33 +46,11 @@ var gridOptions = {
         //Функция, указывающая, какие строки отображать в сетке подробностей.
 
         getDetailRowData: function(params) { //Обратный вызов вызывается для каждой сетки подробностей и устанавливает строки, отображаемые в каждой сетке подробностей.
-            params.successCallback(params.data.obj);
-            console.log(params.data);
+            params.successCallback(Array.of(params.data.owner));
         }
     },
 };
 
-
-var obj = {
-    login: "data.owner.login",
-    id: "data.owner.id",
-    node_id: "data.owner.node_id",
-    avatar_url: "data.owner.avatar_url",
-    gravatar_id: "data.owner.gravatar_id",
-    url: "data.owner.url",
-    html_ur: "data.owner.html_ur",
-    followers_url: "data.owner.followers_url",
-    following_url: "data.owner.following_url",
-    gists_url: "data.owner.gists_url",
-    starred_url: "data.owner.starred_url",
-    subscriptions_url: "data.owner.subscriptions_url",
-    organizations_url: "data.owner.organizations_url",
-    repos_url: "data.owner.repos_url",
-    events_url: "data.owner.events_url",
-    received_events_url: "data.owner.received_events_url",
-    type: "data.owner.type",
-    site_admin: "data.site_admin"
-};
 
 
 document.addEventListener('DOMContentLoaded', function() {
